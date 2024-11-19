@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaniyaS</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('diet8.jpg'); /* Replace with your image URL */
+            background-size: cover; /* Ensure the image covers the entire body */
+            background-position: center; /* Center the background image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Login Form Styling */
+        .login {
+            background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for the form */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Input Fields Styling */
+        input[type="text"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Focus Effect */
+        input[type="text"]:focus, select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        /* Button Styling */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Button Hover Effect */
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>DIET PREDICTION MODEL</h1>
+        <form action="{{url_for('predict')}}" method="post">
+            <input type="text" name="Age" placeholder="Age" required="required"/>
+            
+            <!-- Gender Dropdown -->
+            <select name="Gender" required="required">
+                <option value="" disabled selected>Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            
+            <input type="text" name="Weight(kg)" placeholder="Weight (kg)" required="required"/>
+            <input type="text" name="Height(cm)" placeholder="Height (cm)" required="required"/>
+            
+            <!-- Activity Level Dropdown -->
+            <select name="Activity_Level" required="required">
+                <option value="" disabled selected>Activity Level</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            
+            <!-- Dietary Preferences Dropdown -->
+            <select name="Dietary_Preferences" required="required">
+                <option value="" disabled selected>Dietary Preferences</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option>
+                <option value="Gluten-Free">Gluten-Free</option>
+                <option value="Keto">Keto</option>
+            </select>
+            
+            <!-- Medical Conditions Dropdown -->
+            <select name="Medical_Conditions" required="required">
+                <option value="" disabled selected>Medical Conditions</option>
+                <option value="None">None</option>
+                <option value="Hypertension">Hypertension</option>
+                <option value="High Cholesterol">High Cholesterol</option>
+                <option value="Obesity">Obesity</option>
+                <option value="Diabetes">Diabetes</option>
+            </select>
+            
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
